@@ -1,0 +1,19 @@
+// To achieve the described functionality, you'll need to implement the following steps:
+
+// 1. **Subject.jsx**: Create a component to allow the user to select a subject. When a subject is selected, update the subject state in the DataContext.
+
+// 2. **Year.jsx**: Similarly, create a component to allow the user to select a year. Update the year state in the DataContext when a year is selected.
+
+// 3. **Topic.jsx**: Create a component to allow the user to select a topic. Update the topic state in the DataContext when a topic is selected.
+
+// 4. **TestDescription.jsx**: Fetch questions based on the selected subject, year, and topic from the DataContext. Render either TestHavingNoAnswer.jsx or TestWithAnswers.jsx based on user selection.
+
+// 5. **TestHavingNoAnswer.jsx**: Render questions without answers based on the selected subject, year, and topic from the DataContext.
+
+// 6. **TestWithAnswers.jsx**: Render questions with answers based on the selected subject, year, or topic from the DataContext.
+
+// 7. **DataContext.jsx**: Create a context to manage global state. Provide context values and update functions to child components. Maintain state for subject, year, topic, subjectData, yearData, and topicData.
+
+// 8. **ApiService.js**: Encapsulate API calls to fetch subjects, years, topics, and questions from your backend API.
+
+// Here's a rough structure of how your components might look like:

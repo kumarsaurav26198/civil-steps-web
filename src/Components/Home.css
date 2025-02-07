@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+*{
+  font-family: 'Lato', sans-serif;
+  
+}
+body{
+  overflow-x: none;
+}
+
+
+
+
+
+.custom-background{
+  position: relative;
+  width: 100vw;
+  height: 66vh;
+  background-image: url('../Rectangle\ 2.png');
+  background-size: cover;
+  background-position: cover;
+ 
+    
+}
+
+
+
+@media screen  and (max-width:600px){
+  .custom-background{
+    position: relative;
+    width: 100vw;
+    height: 66vh;
+    background-image: none;
+    background-color: #FAB519;
+   
+      
+  }
+  
+
+  
+}
+
+
+.container2{
+    background-image: url('../Group\ 13.png');
+    background-size: cover;
+  background-position: center;
+}
+
+.container3{
+    background-image: url('../Group\ 12.png');
+    background-size: cover;
+  background-position: center;
+}
+
+.container30{
+  background-image: url('./topic\ image.webp');
+  background-size: cover;
+background-position: center;
+}
+.container4{
+    background-image: url('../Rectangle\ 12.png');
+    background-size: cover;
+  background-position: center;
+}
+
+.rec15{
+  background-image: url('../Rectangle\ 15.png');
+  background-size: cover;
+background-position: center;
+
+}
+
+.container5{
+  background-image: url('../Rectangle\ 13.png');
+  background-size: cover;
+  background-position: center;
+  
+}
+
+.container6{
+  background-image: url('../Rectangle\ 16.png');
+  background-size: cover;
+  background-position: center;
+
+}
+.container7{
+  background-image: url('../Rectangle\ 17\ .png');
+  background-size: cover;
+  background-position: center;
+
+}
+.container8{
+  background-image: url('../Rectangle\ 18\ .png');
+  background-size: cover;
+  background-position: center;
+
+}
+.container9{
+  background-image: url('../Rectangle\ 19.png');
+  background-size: cover;
+  background-position: center;
+
+}
+
+.box {
+  margin-top:4vh;
+  position: relative;
+  width: 100vw;
+  height: 35vh;
+  overflow: hidden;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../Rectangle\ 25\ .png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0.5; /* Adjust the opacity of the background image */
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+.container10{
+  position:relative;
+}
+.container10::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../Rectangle\ 25\ .png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color:rgba(0, 0,0,0.75);
+
+}
+
+.user-icon {
+  display: inline-block;
+  width: 4vw;
+  height: 8vh;
+  margin-top: -16px;
+  background-color: rgb(250,181,99);
+  
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+.icon {
+  color: black; /* Icon color */
+  font-size: 50px; /* Adjust icon size */
+  z-index: 5;
+}
+
+.container11{
+  background-image: url('../Rectangle\ 30\ .png');
+  background-size: cover;
+  background-position: center;
+}
+.container12{
+  background-image: url('../Rectangle\ 31.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.yellow-bg {
+  width: 40px;
+  height: 40px;
+  background-color: yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.black-icon {
+  width: 60%;
+  height: 60%;
+  color: black;
+}
+
+.blog1{
+  /* Sed ut perspiciatis unde omnis iste natus */
+
+
+font-family: 'Lato';
+font-style: normal;
+font-weight: 600;
+font-size: 15px;
+line-height: 18px;
+
+text-transform: capitalize;
+
+color: #000000;
+width:19vw;
+margin-top: 7vh;
+
+
+}
+
+.blog2{
+  /* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor */
+
+
+
+font-family: 'Lato';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+text-transform: capitalize;
+margin-top: 1.5vh;
+width:16vw;
+
+color: #000000;
+
+
+}
+
+.blog3{
+  /* Group 30 */
+
+
+
+
+font-family: 'Lato';
+font-style: normal;
+font-weight: 600;
+font-size: 1.05rem;
+line-height: 14px;
+text-transform: uppercase;
+margin-top: 2vh;
+
+color: #000000;
+display: flex;
+
+
+}
+
+.arrow-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.black-icon1 {
+  width: 100%;
+  height: 100%;
+  color: black;
+  margin-bottom: 1vw;
+}
+
+.container13{
+  background-image: url('../Rectangle\ 32.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.container14{
+  background-image: url('../Rectangle\ 33.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.container15{
+  background-image: url('../Rectangle\ 34.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.container16{
+  position:relative;
+}
+.container16::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../Rectangle\ 52.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color:rgba(0, 0,0,0.75);
+
+}
+
+.five-star-rating {
+  font-size: 0; /* Remove white space between inline-block elements */
+  margin-top: 1vh;
+}
+
+.star {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 0 2px;
+  background-color: transparent;
+  clip-path: polygon(
+    50% 0%,
+    61% 38%,
+    100% 38%,
+    68% 59%,
+    79% 100%,
+    50% 75%,
+    21% 100%,
+    32% 59%,
+    0% 38%,
+    39% 38%
+  );
+}
+
+.yellow-star {
+  background-color: #FAB519;
+}
+.search-bars {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4vh;
+}
+
+.search-bar {
+  height: 8vh;
+  width:30vw;
+  padding: 10px;
+  margin: 10px;
+  font-size: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none; /* Remove default outline */
+  
+}
+
+.search-bar1 {
+  height: 16vh;
+  width:30vw;
+  padding: 10px;
+  margin: 10px;
+  font-size: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none; /* Remove default outline */
+  
+}
+
+.fback{
+  background-image: url('../Group\ 59.png');
+background-size: cover;
+background-position: center;
+width:100vw;
+height:40vh;
+}
+
+

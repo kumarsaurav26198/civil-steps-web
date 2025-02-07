@@ -1,0 +1,49 @@
+* {
+ margin: 0;
+ padding: 0;
+}
+
+body {
+ overflow-x: none;
+}
+/* Header.css */
+
+.sticky {
+ position: sticky;
+ top: 0;
+ z-index: 1000;
+ background-color: white; /* Adjust as needed */
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ transition: top 0.3s;
+}
+
+.hidden {
+ top: -100px; /* Adjust based on header height */
+}
+
+/* Header.css */
+
+/* Hide the desktop menu on small screens */
+@media screen and (max-width: 1024px) {
+    .desktop-menu {
+      display: none;
+    }
+  }
+  
+  /* Optional: additional styling for the header */
+  .header {
+    position: relative;
+    transition: top 0.3s;
+  }
+  
+  .header.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .header.hidden {
+    top: -70px;
+  }
+  
