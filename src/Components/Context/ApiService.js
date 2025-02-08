@@ -1,7 +1,8 @@
 import axios from "axios";
+import { baseURL } from "../../services/apiEndPoints";
 
 // const BASE_URL = "https://api.civilsteps.com/api";
-const BASE_URL = "https://api.civilsteps.com/api";
+const BASE_URL = baseURL;
 
 const ApiService = {
  fetchSubjects: async () => {

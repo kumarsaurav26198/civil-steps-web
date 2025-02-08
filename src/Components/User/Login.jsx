@@ -20,8 +20,8 @@ const Login = () => {
  const toast = useToast();
  const { setIsAuth, setToken } = useContext(AuthContext);
  const [formData, setFormData] = useState({
-  Mobileno: "",
-  Password: "",
+  Mobileno: "90299103212",
+  Password: "Dev",
  });
 
  const handleInput = (e) => {

@@ -39,7 +39,7 @@ const AddQuesBySubTopic = () => {
   const fetchSubjects = async () => {
     try {
       const response = await axios.get(
-        "https://api.civilsteps.com/api/sub-topic/subjects"
+        `${baseURL}/api/sub-topic/subjects`,
       );
       setSubjects(response.data.data);
     } catch (error) {
@@ -54,7 +54,8 @@ const AddQuesBySubTopic = () => {
 
     try {
       const response = await axios.get(
-        `https://api.civilsteps.com/api/sub-topic/subject/${selectedSubject}/topics`
+    `${baseURL}/api/sub-topic/subject/${selectedSubject}/topics`,
+        // `https://api.civilsteps.com/api/sub-topic/subject/${selectedSubject}/topics`
       );
       console.log(response.data.subject);
       setTopics(response.data.topic); // Update topics state with fetched topics
@@ -77,7 +78,8 @@ const AddQuesBySubTopic = () => {
     console.log("data", formData);
     try {
       const response = await axios.post(
-        `https://api.civilsteps.com/api/questions/${formData.subject}/${formData.topic}`,
+    `${baseURL}/api/questions/${formData.subject}/${formData.topic}`,
+        // `https://api.civilsteps.com/api/questions/${formData.subject}/${formData.topic}`,
         formData
       );
       if (response.status === 201) {
@@ -124,7 +126,8 @@ const AddQuesBySubTopic = () => {
       };
 
       const response = await axios.post(
-        `https://api.civilsteps.com/api/sub-topic/subject`,
+        `${baseURL}/api/sub-topic/subject`,
+        // `https://api.civilsteps.com/api/sub-topic/subject`,
         payload
       );
       console.log("response:", response.data.data._id);
@@ -136,7 +139,8 @@ const AddQuesBySubTopic = () => {
         const topicsToAdd = Array.isArray(addTopic) ? addTopic : [addTopic];
 
         const addTopicsResponse = await axios.post(
-          `https://api.civilsteps.com/api/sub-topic/subject/${subjectId}/topics`,
+          `${baseURL}/api/sub-topic/subject/${subjectId}/topics`,
+          // `https://api.civilsteps.com/api/sub-topic/subject/${subjectId}/topics`,
           { topics: topicsToAdd }
         );
         console.log("addTopicsResponse:", addTopicsResponse);

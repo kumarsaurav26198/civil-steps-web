@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'https://api.civilsteps.com',
+  // baseURL: 'https://api.civilsteps.com',
+  baseURL: 'http://localhost:3009',
 });
 
 axiosInstance.interceptors.request.use((config) => {

@@ -71,7 +71,8 @@ const Table_sub_topic = () => {
  const handleSubjectChange = async (e) => {
   const selectedSubject = e.target.value;
   const responce = await axios.get(
-   `https://api.civilsteps.com/api/sub-topic/subject/${selectedSubject}/topics`
+    `${baseURL}/api/sub-topic/subject/${selectedSubject}/topics`
+//    `https://api.civilsteps.com/api/sub-topic/subject/${selectedSubject}/topics`
   );
   console.log("responce:1", responce);
   setTopic(responce.data.topic);
@@ -89,7 +90,8 @@ const Table_sub_topic = () => {
   if (selectedTopices && selectedSubject) {
    try {
     const response = await axios.get(
-     `https://api.civilsteps.com/api/${selectedSubject}/${selectedTopices}`
+    `${baseURL}/api/${selectedSubject}/${selectedTopices}`
+    //  `https://api.civilsteps.com/api/${selectedSubject}/${selectedTopices}`
     );
     console.log("response:2", response);
     if (response.status === 200) {
@@ -104,7 +106,8 @@ const Table_sub_topic = () => {
  const fetchQData = async () => {
   try {
    const response = await axios.get(
-    `https://api.civilsteps.com/api/${selectedSubject}/${selectedTopices}`
+    `${baseURL}/api/${selectedSubject}/${selectedTopices}`
+    // `https://api.civilsteps.com/api/${selectedSubject}/${selectedTopices}`
    );
    console.log("response 3:", response);
    if (response.status === 200) {
@@ -129,7 +132,8 @@ const Table_sub_topic = () => {
   try {
    if (id && selectedSubject && selectedTopices) {
     const response = await axios.delete(
-     `https://api.civilsteps.com/api/questions/${selectedSubject}/${selectedTopices}/${id}`
+    `${baseURL}/api/questions/${selectedSubject}/${selectedTopices}/${id}`
+    //  `https://api.civilsteps.com/api/questions/${selectedSubject}/${selectedTopices}/${id}`
     );
     if (response === 200) {
      console.log("done deletion");
@@ -142,7 +146,8 @@ const Table_sub_topic = () => {
   const getSubjects = async () => {
    try {
     const response = await axios.get(
-     "https://api.civilsteps.com/api/sub-topic/subjects"
+        `${baseURL}/api/sub-topic/subjects`
+    //  "https://api.civilsteps.com/api/sub-topic/subjects"
     );
     setSubjects(response.data.data);
    } catch (error) {

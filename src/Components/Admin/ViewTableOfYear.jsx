@@ -44,6 +44,7 @@ import axios from "axios";
 import { TiDocumentAdd } from "react-icons/ti";
 import { FaDisplay } from "react-icons/fa6";
 import DynamicInputField from "./DynamicInputField";
+import { baseURL } from "../../services/apiEndPoints";
 
 const ViewTableOfYear = () => {
  const toast = useToast();
@@ -97,7 +98,8 @@ const ViewTableOfYear = () => {
    if (updateQues === false) {
     // Adding a new question
     const response = await axios.post(
-     `https://api.civilsteps.com/api/question/year`,
+    //  `https://api.civilsteps.com/api/question/year`,
+     `${baseURL}/api/question/year`,
      formData
     );
     console.log("response:", response);
@@ -113,7 +115,8 @@ const ViewTableOfYear = () => {
     }
    } else {
     const responce = await axios.patch(
-     `https://api.civilsteps.com/api/question/year/${ids}`,
+    //  `https://api.civilsteps.com/api/question/year/${ids}`,
+     `${baseURL}/api/question/year/${ids}`,
      formData
     );
     console.log("Update logic goes here");
@@ -142,7 +145,8 @@ const ViewTableOfYear = () => {
  const handleDelete = async (id) => {
   try {
    const response = await axios.delete(
-    `https://api.civilsteps.com/api/question/year/${id}`
+    // `https://api.civilsteps.com/api/question/year/${id}`
+    `${baseURL}/api/question/year/${id}`
    );
    console.log("response:", response);
    if (response.status === 200) {
@@ -174,7 +178,8 @@ const ViewTableOfYear = () => {
    };
    console.log("payload:", payload);
    const response = await axios.post(
-    `https://api.civilsteps.com/api/year`,
+    // `https://api.civilsteps.com/api/year`,
+    `${baseURL}/api/year`,
     payload
    );
    console.log("response:", response);
@@ -208,7 +213,8 @@ const ViewTableOfYear = () => {
   setUpdateQue(true);
   try {
    const response = await axios.get(
-    `https://api.civilsteps.com/api/question/year/get/${id}`
+    // `https://api.civilsteps.com/api/question/year/get/${id}`
+    `${baseURL}/api/question/year/get/${id}`
    );
    const questionData = response.data;
    setFormData({
@@ -243,7 +249,8 @@ const ViewTableOfYear = () => {
   // setQuestionId(id);
   try {
    const response = await axios.get(
-    `https://api.civilsteps.com/api/question/year/get/${id}`
+    // `https://api.civilsteps.com/api/question/year/get/${id}`
+    `${baseURL}/api/question/year/get/${id}`
    );
    console.log("response:", response);
    setSubjectSingleData(response.data);
@@ -286,7 +293,8 @@ const ViewTableOfYear = () => {
  };
  useEffect(() => {
   axios
-   .get(`https://api.civilsteps.com/api/year`)
+  //  .get(`https://api.civilsteps.com/api/year`)
+   .get(`${baseURL}/api/year`)
    .then((response) => {
     setYearOfDb(response.data);
    })
@@ -301,7 +309,8 @@ const ViewTableOfYear = () => {
    setError("");
 
    axios
-    .get(`https://api.civilsteps.com/api/question/year/${subject}`)
+    // .get(`https://api.civilsteps.com/api/question/year/${subject}`)
+    .get(`${baseURL}/api/question/year/${subject}`)
     .then((response) => {
      setQuestions(response.data);
      setLoading(false);

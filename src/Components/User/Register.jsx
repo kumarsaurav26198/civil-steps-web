@@ -12,21 +12,22 @@ import {
 } from "@chakra-ui/react";
 import img1 from "./WhatsApp Image 2023-09-30 at 12.20.18 PM.jpeg";
 import axios from "axios";
+import { baseURL } from "../../services/apiEndPoints";
 
 const Register = () => {
  const navigate = useNavigate();
 
  const [formData, setFormData] = useState({
-  Firstname: "",
-  Lastname: "",
-  Age: "",
-  Location: "",
-  Gender: "",
-  Noofattempts: "",
-  Email: "",
-  Whatsappno: "",
-  Mobileno: "",
-  Password: "",
+  Firstname: "Ankit",
+  Lastname: "Sharma",
+  Age: "22",
+  Location: "Delhi",
+  Gender: "Male",
+  Noofattempts: "1",
+  Email: "ankitsharma7@gmail.com",
+  Whatsappno: "90299103212",
+  Mobileno: "90299103212",
+  Password: "Dev",
  });
 
  const handleinput = (e) => {
@@ -39,7 +40,7 @@ const Register = () => {
  const handlesubmit = async () => {
   try {
    const response = await axios.post(
-    "https://api.civilsteps.com/api/user/register",
+    `${baseURL}/api/user/register`,
     formData
    );
 

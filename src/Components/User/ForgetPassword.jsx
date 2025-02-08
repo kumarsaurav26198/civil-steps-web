@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useState } from "react";
+import { baseURL } from "../../services/apiEndPoints";
 
 const ForgetPassword = () => {
  const toast = useToast();
@@ -26,7 +27,8 @@ const ForgetPassword = () => {
   if (validateEmail(email)) {
    try {
     const response = await axios.post(
-     `https://api.civilsteps.com/api/user/forget-password`,
+//      `https://api.civilsteps.com/api/user/forget-password`,
+     `${baseURL}/api/user/forget-password`,
      { Email: email }
     );
     console.log("response:", response);

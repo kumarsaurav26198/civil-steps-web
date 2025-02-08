@@ -38,6 +38,7 @@ import {
 } from "@chakra-ui/react";
 import { MdAdd } from "react-icons/md";
 import { RiFileAddLine } from "react-icons/ri";
+import { baseURL } from "../../services/apiEndPoints";
 const SubjectOperations = () => {
  const { isOpen, onOpen, onClose } = useDisclosure();
  const [showTopicInput, setShowTopicInput] = useState(false);
@@ -56,7 +57,8 @@ const SubjectOperations = () => {
   console.log("topic:", topic);
   try {
    const addTopicsResponse = await axios.post(
-    `https://api.civilsteps.com/api/sub-topic/subject/${topicID}/topics`,
+    `${baseURL}/api/sub-topic/subject/${topicID}/topics`,
+    // `https://api.civilsteps.com/api/sub-topic/subject/${topicID}/topics`,
     { topics: [topic] }
    );
    console.log("addTopicsResponse:", addTopicsResponse);
@@ -68,7 +70,8 @@ const SubjectOperations = () => {
   console.log("id:", id);
   setTopicId(id);
   const responce = await axios.get(
-   `https://api.civilsteps.com/api/sub-topic/subject/${id}/topics`
+    `${baseURL}/api/sub-topic/subject/${id}/topics`,
+  //  `https://api.civilsteps.com/api/sub-topic/subject/${id}/topics`
   );
   setSubTopData(responce.data);
   setTopicData(responce.data.topic);
@@ -82,7 +85,8 @@ const SubjectOperations = () => {
   console.log("payload:", payload);
   try {
    const responce = await axios.delete(
-    `https://api.civilsteps.com/api/sub-topic/rm-topic/${topicID}`,
+    `${baseURL}/api/sub-topic/rm-topic/${topicID}`,
+    // `https://api.civilsteps.com/api/sub-topic/rm-topic/${topicID}`,
     { data: { topicIds: id } }
    );
    console.log("responce:", responce);
@@ -95,7 +99,8 @@ const SubjectOperations = () => {
  const handleSubDelete = async (id, subject) => {
   try {
    const responce = await axios.delete(
-    `https://api.civilsteps.com/api/sub-topic/subjects/${topicID}`
+    `${baseURL}/api/sub-topic/subjects/${topicID}`,
+    // `https://api.civilsteps.com/api/sub-topic/subjects/${topicID}`
    );
    console.log("responce:", responce);
    getSubjects();
@@ -106,8 +111,10 @@ const SubjectOperations = () => {
  };
  const getSubData = async () => {
   try {
-   const responce = await axios
-    .get(`https://api.civilsteps.com/api/subjects`)
+   const response = await axios
+
+    // .get(`https://api.civilsteps.com/api/subjects`)
+    .get(`${baseURL}/subjects`)
     .then((response) => {
      setSubjectOfDb(response.data);
     })
@@ -122,7 +129,8 @@ const SubjectOperations = () => {
  const getYearData = async () => {
   try {
    const responce = await axios
-    .get(`https://api.civilsteps.com/api/year`)
+    // .get(`https://api.civilsteps.com/api/year`)
+    .get(`${baseURL}/api/year`)
     .then((response) => {
      setYearOfDb(response.data);
     })
@@ -136,8 +144,8 @@ const SubjectOperations = () => {
  }, []);
  const getSubjects = async () => {
   try {
-   const response = await axios.get(
-    "https://api.civilsteps.com/api/sub-topic/subjects"
+   const response = await axios.get(`${baseURL}/api/sub-topic/subjects`
+    // "https://api.civilsteps.com/api/sub-topic/subjects"
    );
    setSubjects(response.data.data);
   } catch (error) {
@@ -161,6 +169,7 @@ const SubjectOperations = () => {
    console.log("id:", id);
    const response = await axios.delete(
     `https://api.civilsteps.com/api/year/${id}`
+    // `https://api.civilsteps.com/api/year/${id}`
    );
    if (response.status === 200) {
     getYearData();
@@ -173,7 +182,8 @@ const SubjectOperations = () => {
   try {
    console.log("id:", id);
    const response = await axios.delete(
-    `https://api.civilsteps.com/api/subject/${id}`
+    `${baseURL}/api/subject/${id}`
+    // `https://api.civilsteps.com/api/subject/${id}`
    );
    if (response.status === 200) {
     getSubData();

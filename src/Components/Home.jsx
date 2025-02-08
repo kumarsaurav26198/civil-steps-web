@@ -44,14 +44,15 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { baseURL } from "../services/apiEndPoints";
 
 const Home = () => {
   const toast = useToast();
   const [feedbackData, setFeedbackData] = useState({
-    fullname: "",
-    email: "",
-    mobile: "",
-    description: "",
+    fullname: "Sajan Kumar",
+    email: "kumarsaurav26198@gmail.com",
+    mobile: "916242422155",
+    description: "Hey There!",
   });
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -65,7 +66,7 @@ const Home = () => {
     console.log("feedbackData:", feedbackData);
     try {
       const responce = await axios.post(
-        `https://api.civilsteps.com/course-enquiry`,
+        `${baseURL}/course-enquiry`,
         feedbackData
       );
       if (responce.status === 201) {

@@ -1,10 +1,12 @@
 import axios from "axios";
+import { baseURL } from "../../services/apiEndPoints";
 
 const ApiService = {
   fetchSubjects: async () => {
     try {
       const response = await axios.get(
-        "https://api.civilsteps.com/api/subjects"
+        `${baseURL}/api/subjects`,
+        // "https://api.civilsteps.com/api/subjects"
       );
       console.log("Get subject response:", response);
       return response.data;
@@ -14,7 +16,8 @@ const ApiService = {
   },
   fetchYears: async () => {
     try {
-      const response = await axios.get("https://api.civilsteps.com/api/year");
+      // const response = await axios.get("https://api.civilsteps.com/api/year");
+      const response = await axios.get(`${baseURL}/api/year`);
       return response.data;
     } catch (error) {
       throw new Error(`Error fetching years: ${error.message}`);
@@ -24,7 +27,8 @@ const ApiService = {
   fetchSubject: async () => {
     try {
       const response = await axios.get(
-        `https://api.civilsteps.com/api/sub-topic/subjects`
+        // `https://api.civilsteps.com/api/sub-topic/subjects`
+        `${baseURL}/api/sub-topic/subjects`
       );
       console.log("subject-response:", response.data);
 

@@ -16,6 +16,7 @@ import {
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
+import { baseURL } from "../../services/apiEndPoints";
 
 const ResetPass = () => {
  const navigate = useNavigate();
@@ -51,7 +52,8 @@ const ResetPass = () => {
     newPassword: confirmPassword,
    };
    const response = await axios.post(
-    `https://api.civilsteps.com/api/user/reset-password`,
+    // `https://api.civilsteps.com/api/user/reset-password`,
+    `${baseURL}/api/user/reset-password`,
     payload
    );
    if (response.status === 200) {

@@ -45,6 +45,7 @@ import { AiTwotoneDelete } from "react-icons/ai";
 import { TiDocumentAdd } from "react-icons/ti";
 import { FaDisplay } from "react-icons/fa6";
 import DynamicInputField from "./DynamicInputField";
+import { baseURL } from "../../services/apiEndPoints";
 
 const ViewTableOfSub = () => {
  const toast = useToast();
@@ -112,7 +113,8 @@ const ViewTableOfSub = () => {
    if (updateQues === false) {
     // Adding a new question
     const response = await axios.post(
-     `https://api.civilsteps.com/api/question/sub/`,
+     `${baseURL}/api/question/sub/`,
+    //  `https://api.civilsteps.com/api/question/sub/`,
      formData
     );
     console.log("response:", response);
@@ -128,7 +130,7 @@ const ViewTableOfSub = () => {
     }
    } else {
     const responce = await axios.patch(
-     `https://api.civilsteps.com/api/question/sub/${ids}`,
+     `${baseURL}/api/question/sub/${ids}`,
      formData
     );
     console.log("Update logic goes here");
@@ -157,7 +159,8 @@ const ViewTableOfSub = () => {
  const handleDelete = async (id) => {
   try {
    const response = await axios.delete(
-    `https://api.civilsteps.com/api/question/sub/${id}`
+    `${baseURL}/api/question/sub/${id}`
+    // `https://api.civilsteps.com/api/question/sub/${id}`
    );
    console.log("response:", response);
    if (response.status === 200) {
@@ -188,7 +191,8 @@ const ViewTableOfSub = () => {
     name: addSubject,
    };
    const response = await axios.post(
-    `https://api.civilsteps.com/api/subjects`,
+    `${baseURL}/api/subjects`,
+    // `https://api.civilsteps.com/api/subjects`,
     payload
    );
    console.log("response:", response);
@@ -222,7 +226,7 @@ const ViewTableOfSub = () => {
   // setQuestionId(id);
   try {
    const response = await axios.get(
-    `https://api.civilsteps.com/api/question/sub/get/${id}`
+    `${baseURL}/api/question/sub/get/${id}`
    );
    console.log("response:", response);
    setSubjectSingleData(response.data);
@@ -236,7 +240,8 @@ const ViewTableOfSub = () => {
   setUpdateQue(true);
   try {
    const response = await axios.get(
-    `https://api.civilsteps.com/api/question/sub/get/${id}`
+    `${baseURL}/api/question/sub/get/${id}`
+    // `https://api.civilsteps.com/api/question/sub/get/${id}`
    );
    const questionData = response.data;
    console.log("questionData ==========================>:", questionData);
@@ -293,7 +298,8 @@ const ViewTableOfSub = () => {
  };
  useEffect(() => {
   axios
-   .get(`https://api.civilsteps.com/api/subjects`)
+  //  .get(`https://api.civilsteps.com/api/subjects`)
+   .get(`${baseURL}/api/subjects`)
    .then((response) => {
     setSubjectOfDb(response.data);
    })
@@ -308,7 +314,8 @@ const ViewTableOfSub = () => {
    setError("");
 
    axios
-    .get(`https://api.civilsteps.com/api/question/sub/${subject}`)
+   // .get(`https://api.civilsteps.com/api/question/sub/${subject}`)
+   .get(`${baseURL}/api/question/sub/${subject}`)
     .then((response) => {
      setQuestions(response.data);
      setLoading(false);

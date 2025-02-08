@@ -9,6 +9,7 @@ import {
  Select,
  Button,
 } from "@chakra-ui/react";
+import { baseURL } from "../../services/apiEndPoints";
 
 const UpdateSubTop = ({ subject, topic, id, onUpdate, showUpdate }) => {
  //   const [dataToUpdate, setDataUpdate] = useState({});
@@ -73,7 +74,8 @@ const UpdateSubTop = ({ subject, topic, id, onUpdate, showUpdate }) => {
   e.preventDefault();
   try {
    const response = await axios.put(
-    `https://api.civilsteps.com/api/questions/${subject}/${topic}/${id}`,
+    `${baseURL}/api/questions/${subject}/${topic}/${id}`,
+    // `https://api.civilsteps.com/api/questions/${subject}/${topic}/${id}`,
     formData
    );
    if (response.status === 200) {
@@ -101,7 +103,8 @@ const UpdateSubTop = ({ subject, topic, id, onUpdate, showUpdate }) => {
   const fetchQuestion = async () => {
    try {
     const response = await axios.get(
-     `https://api.civilsteps.com/api/questions/${subject}/${topic}/${id}`
+     `${baseURL}/api/questions/${subject}/${topic}/${id}`
+    //  `https://api.civilsteps.com/api/questions/${subject}/${topic}/${id}`
     );
     setFormData(response.data.question);
    } catch (error) {

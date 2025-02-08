@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Box, Button, Text } from "@chakra-ui/react";
+import { baseURL } from "../../services/apiEndPoints";
 
 const TestWithAnswers = () => {
  const userDetails = JSON.parse(localStorage.getItem("userDetails"));
@@ -17,11 +18,14 @@ const TestWithAnswers = () => {
    try {
     let url;
     if (subject) {
-     url = `https://api.civilsteps.com/api/question/sub/${subject}`;
+     url = `${baseURL}/api/question/sub/${subject}`;
+    //  url = `https://api.civilsteps.com/api/question/sub/${subject}`;
     } else if (year) {
-     url = `https://api.civilsteps.com/api/question/year/${year}`;
+     url = `${baseURL}/api/question/year/${year}`;
+    //  url = `https://api.civilsteps.com/api/question/year/${year}`;
     } else if (topicSub && topic) {
-     url = `https://api.civilsteps.com/api/${topicSub}/${topic}`;
+     url = `${baseURL}/api/${topicSub}/${topic}`;
+    //  url = `https://api.civilsteps.com/api/${topicSub}/${topic}`;
     }
     if (url) {
      const response = await axios.get(url);

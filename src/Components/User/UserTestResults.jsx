@@ -12,6 +12,7 @@ import {
  TableContainer,
 } from "@chakra-ui/react";
 import axios from "axios";
+import { baseURL } from "../../services/apiEndPoints";
 const UserTestResults = () => {
  const [result, setResult] = useState();
  const [userDetails, setUserDetails] = useState(
@@ -20,7 +21,8 @@ const UserTestResults = () => {
  const getMyResult = async () => {
   try {
    const responce = await axios.get(
-    `https://api.civilsteps.com/api/test-results/${userDetails._id}`
+    `${baseURL}/api/test-results/${userDetails._id}`,
+    // `https://api.civilsteps.com/api/test-results/${userDetails._id}`
    );
    console.log("responce:", responce.data);
    setResult(responce.data);

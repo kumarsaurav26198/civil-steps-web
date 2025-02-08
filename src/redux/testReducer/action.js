@@ -1,5 +1,6 @@
 import axios from "axios";
 import * as types from "./actionTypes";
+import { baseURL } from "../../services/apiEndPoints";
 const token = localStorage.getItem("token");
 
 export const getTest = (subject, topic, level, user_ID) => (dispatch) => {
@@ -15,7 +16,8 @@ export const getTest = (subject, topic, level, user_ID) => (dispatch) => {
 
   return axios
     .get(
-      `https://api.civilsteps.com/api/questions?subject=${subject}&topic=${topic}&level=${level}&user_ID=${user_ID}`,
+      // `https://api.civilsteps.com/api/questions?subject=${subject}&topic=${topic}&level=${level}&user_ID=${user_ID}`,
+      `${baseURL}/api/questions?subject=${subject}&topic=${topic}&level=${level}&user_ID=${user_ID}`,
       config
     )
     .then((response) => {
@@ -40,7 +42,8 @@ export const GetSubjects = () => async (dispatch) => {
 
   try {
     const response = await axios.get(
-      `https://api.civilsteps.com/api/sub-topic/subjects`
+      // `https://api.civilsteps.com/api/sub-topic/subjects`
+      `${baseURL}/api/sub-topic/subjects`
     );
     console.log("response:", response.data.data);
     dispatch({
@@ -60,7 +63,8 @@ export const getSubjectOfTopics = (subjectId) => async (dispatch) => {
   dispatch({ type: types.GET_SUBJECT_OF_TOPIC_REQUEST });
   try {
     const response = await axios.get(
-      `https://api.civilsteps.com/api/sub-topic/subject/${subjectId}/topics`
+      // `https://api.civilsteps.com/api/sub-topic/subject/${subjectId}/topics`
+      `${baseURL}/api/sub-topic/subject/${subjectId}/topics`
     );
     console.log("API Response:", response.data); // Log the response
 
@@ -103,7 +107,8 @@ export const submitAnswers =
       };
 
       const response = await axios.post(
-        "https://api.civilsteps.com/api/submit",
+        // "https://api.civilsteps.com/api/submit",
+        `${baseURL}/api/submit`,
         body,
         config
       );
@@ -128,7 +133,8 @@ export const fetchUnlockedLevels = (userId) => async (dispatch) => {
 
   try {
     const response = await axios.get(
-      `https://api.civilsteps.com/api/levels/?userId=${userId}`,
+      // `https://api.civilsteps.com/api/levels/?userId=${userId}`,
+      `${baseURL}/api/levels/?userId=${userId}`,
       {
         headers: {
           Authorization: `Bearer ${token}`, // Authorization header
